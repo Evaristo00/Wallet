@@ -31,7 +31,7 @@ public class AuthenticationService {
 
 
     public JwtAuthenticationResponse singUp(SingUpRequestDTO singUpRequestDTO){
-        Role userRole = roleRepository.findByName(EnumRole.ROLE_USER).orElseThrow(() -> new IllegalStateException("El rol ROLE_USER no existe"));
+        Role userRole = roleRepository.findById(EnumRole.ROLE_USER).orElseThrow(() -> new IllegalStateException("El rol ROLE_USER no existe"));
         User user = User.builder()
                 .email(singUpRequestDTO.email())
                 .firstName(singUpRequestDTO.firstName())

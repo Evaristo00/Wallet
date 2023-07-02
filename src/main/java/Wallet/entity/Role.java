@@ -20,10 +20,6 @@ import java.util.List;
 public class Role {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @NotNull
-    @Column(nullable = false,unique = true)
     private EnumRole name;
 
     private String descripcion;
