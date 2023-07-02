@@ -18,8 +18,8 @@ public class DatabaseSeeder implements CommandLineRunner {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
-
     private final RoleRepository roleRepository;
+
     @Value("${develop.seeder}")
     private Boolean crearUsuarios;
 

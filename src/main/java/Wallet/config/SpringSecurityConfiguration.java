@@ -1,6 +1,7 @@
 package Wallet.config;
 
 
+import Wallet.enums.EnumRole;
 import Wallet.service.AuthorizationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -54,6 +55,7 @@ public class SpringSecurityConfiguration {
                         request.requestMatchers("/auth/**")
                                 .permitAll()
                                 .requestMatchers("/role/**").permitAll()
+                                .requestMatchers("/users/**").hasAuthority(EnumRole.ROLE_USER.name())
                                 .anyRequest().authenticated())
                 .sessionManagement(manager -> manager.sessionCreationPolicy(STATELESS))
                 .authenticationProvider(authenticationProvider()).addFilterBefore(

@@ -96,6 +96,6 @@ public class User implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return this.softDelete;
+        return !this.softDelete;
     }
 }
