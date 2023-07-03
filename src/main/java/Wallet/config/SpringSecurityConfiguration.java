@@ -55,6 +55,7 @@ public class SpringSecurityConfiguration {
                         request.requestMatchers("/auth/**")
                                 .permitAll()
                                 .requestMatchers("/role/**").permitAll()
+                                .requestMatchers("/docs/**").permitAll()
                                 .requestMatchers("/users/**").hasAuthority(EnumRole.ROLE_USER.name())
                                 .anyRequest().authenticated())
                 .sessionManagement(manager -> manager.sessionCreationPolicy(STATELESS))

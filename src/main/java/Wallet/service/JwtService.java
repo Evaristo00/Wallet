@@ -39,9 +39,6 @@ public class JwtService {
         return claimsResolvers.apply(claims);
     }
 
-    public Integer extractDni(String token) {
-        return extractClaim(token, claims -> claims.get("Dni", Integer.class));
-    }
 
     public String extractUserName(String token) {
         return extractClaim(token, Claims::getSubject);

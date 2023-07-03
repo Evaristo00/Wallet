@@ -3,13 +3,12 @@ package Wallet.entity;
 import Wallet.enums.EnumRole;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -17,7 +16,7 @@ import java.util.List;
 @Getter@Setter
 @AllArgsConstructor@NoArgsConstructor
 @Table(name = "role")
-public class Role {
+public class Role implements Serializable {
 
     @Id
     private EnumRole name;
